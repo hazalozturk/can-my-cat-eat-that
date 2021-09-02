@@ -1,6 +1,6 @@
 import React from 'react'
-import catRight from '../assets/cat-right.png';
-import catLeft from '../assets/cat-left.png';
+import catRight from '../images/cat-right.png';
+import catLeft from '../images/cat-left.png';
 
 function MainPage() {
     return (
