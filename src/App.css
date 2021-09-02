@@ -49,8 +49,22 @@
 /* Plant View section related styles */
 .plant-view-wrapper {
   margin: 20px;
+  color: #273333;
 }
 
+.selection-flex-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 7vw;
+}
+.toggle-wrapper {
+  margin: 0;
+  text-align: center;
+}
+.toggle-icon {
+  margin: 10px;
+}
 .flex-grid {
   display: flex;
   justify-content: center;

@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
 import inventory from "../plants.json";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faList } from '@fortawesome/free-solid-svg-icons'
+import { faGripVertical } from '@fortawesome/free-solid-svg-icons'
+
+const toDo = () => {
+    alert('TODO: toggle')
+};
 
 function PlantView() {
+
     return (
         <div>
-            <p>TODO: filter and toggle</p>
-
+            <div className="selection-flex-grid">
+                <div>
+                    <p>Toxicity</p>
+                    <p>TODO: Dropdown</p>
+                </div>
+                <div className="toggle-wrapper selection-flex-grid">
+                    <div>
+                        <p>View Options</p>
+                        <i className="toggle-icon" onClick={toDo}><FontAwesomeIcon icon={faGripVertical} size="lg" /></i >
+                        <i className="toggle-icon" onClick={toDo}><FontAwesomeIcon icon={faList} size="lg" /></i >
+                    </div>
+                </div>
+            </div>
             <div className="flex-grid">
                 {inventory.plants.map((plant, index) =>
                     <div className="card" key={index}>
