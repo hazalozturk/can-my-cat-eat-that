@@ -45,3 +45,49 @@
   line-height: 29px;
 }
 /* Search section related styles end */
+
+/* Plant View section related styles */
+.plant-view-wrapper {
+  margin: 20px;
+}
+
+.flex-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+.flex-grid .col {
+  margin: 5px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 40vh;
+  width: 20vw;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.plant-image {
+  max-width: 20vw;
+  min-height: 30vh;
+}
+
+.plant-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  color: #273333;
+  font-weight: bold;
+}
+/* Plant View section related styles end */
