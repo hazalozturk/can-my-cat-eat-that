@@ -31,7 +31,7 @@ function PlantSection(props) {
                         <div className="col">
                             <div className="plant-info-row">
                                 <p className="plant-name">{plant.names.common}</p>
-                                {plant.toxicity ? <p>Toxic</p> : <p>Non-toxic</p>}
+                                {plant.toxicity ? <p className="toxicity-token toxic">Toxic</p> : <p className="toxicity-token">Non-toxic</p>}
                             </div>
                         </div>
                     </div>

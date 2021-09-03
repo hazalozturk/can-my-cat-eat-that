@@ -118,6 +118,18 @@
   color: #273333;
   font-weight: bold;
 }
+
+.toxicity-token {
+  background-color: #026b40;
+  color: white;
+  border-radius: 48px;
+  padding: 8px;
+  font-size: 10px;
+}
+p.toxic {
+  background-color: #ffbc02;
+  color: #273333;
+}
 /* Plant View section related styles end */
 
 /* Search input styles */
