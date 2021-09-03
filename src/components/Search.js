@@ -27,6 +27,7 @@ export default class Search extends React.Component {
         this.setState({
             suggestions: []
         });
+        this.props.setInventory(this.props.inventory);
     };
 
     getSuggestions = value => {
@@ -39,8 +40,10 @@ export default class Search extends React.Component {
             minMatchCharLength: 1,
             keys: ['names.common', 'names.scientific']
         };
-        const fuse = new Fuse(this.props.inventory.plants, options);
-        return fuse.search(value);
+        const fuse = new Fuse(this.props.inventory, options);
+        let results = fuse.search(value)
+        this.props.setInventory(results.map(result => result.item));
+        return results;
     };
 
     getSuggestionValue = suggestion => suggestion.item.names.common;

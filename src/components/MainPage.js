@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import PlantSection from "./PlantSection";
 import Search from "./Search"
-import inventory from "../plants.json";
+import plantInventory from "../plants.json";
 
 import catRight from '../images/cat-right.png';
 import catLeft from '../images/cat-left.png';
 
+const initialState = plantInventory.plants;
+
 function MainPage() {
+    const [inventory, setInventory] = useState(initialState);
+    debugger
     return (
         <>
             <div className="search-wrapper">
@@ -18,7 +22,7 @@ function MainPage() {
                 <div className="col-8 text-wrapper">
                     <h1>Can my cat eat that?</h1>
                     <p className="instructions">Search and filter common house plants and see what’s safe for Sprinkles to nibble on.</p>
-                    <Search inventory={inventory} />
+                    <Search inventory={initialState} setInventory={setInventory} />
                 </div>
                 <div className="col-2">
                     {/* TODO: Use a high res cat log0, this is a Figma export */}
@@ -26,7 +30,7 @@ function MainPage() {
                 </div>
             </div>
             <div className="plant-view-wrapper">
-                <PlantSection />
+                <PlantSection inventory={inventory} />
             </div>
         </>
     )

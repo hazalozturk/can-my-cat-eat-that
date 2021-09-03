@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import inventory from "../plants.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
 import { faGripVertical } from '@fortawesome/free-solid-svg-icons'
@@ -8,8 +7,7 @@ const toDo = () => {
     alert('TODO: toggle')
 };
 
-function PlantSection() {
-
+function PlantSection(props) {
     return (
         <div>
             <div className="selection-flex-grid">
@@ -26,7 +24,7 @@ function PlantSection() {
                 </div>
             </div>
             <div className="flex-grid">
-                {inventory.plants.map((plant, index) =>
+                {props.inventory.map((plant, index) =>
                     <div className="card" key={index}>
                         <img src={require(`../${plant.image}`).default} alt={plant.names.scientific} className="plant-image" />
                         <div className="col">
