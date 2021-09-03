@@ -1,31 +1,6 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import Fuse from 'fuse.js';
-import inventory from "../plants.json";
-
-
-const getSuggestions = value => {
-    let options = {
-        id: "names.common",
-        threshold: 0.3,
-        location: 0,
-        distance: 100,
-        maxPatternLength: 10,
-        minMatchCharLength: 1,
-        keys: ['names.common', 'names.scientific']
-    };
-    const fuse = new Fuse(inventory.plants, options);
-    return fuse.search(value);
-};
-
-const getSuggestionValue = suggestion => suggestion.item.names.common;
-
-const renderSuggestion = suggestion => (
-    <div>
-        {suggestion.item.names.common}
-    </div>
-);
-
 export default class Search extends React.Component {
     constructor() {
         super();
@@ -44,7 +19,7 @@ export default class Search extends React.Component {
 
     onSuggestionsFetchRequested = ({ value }) => {
         this.setState({
-            suggestions: getSuggestions(value)
+            suggestions: this.getSuggestions(value)
         });
     };
 
@@ -53,6 +28,28 @@ export default class Search extends React.Component {
             suggestions: []
         });
     };
+
+    getSuggestions = value => {
+        let options = {
+            id: "names.common",
+            threshold: 0.3,
+            location: 0,
+            distance: 100,
+            maxPatternLength: 10,
+            minMatchCharLength: 1,
+            keys: ['names.common', 'names.scientific']
+        };
+        const fuse = new Fuse(this.props.inventory.plants, options);
+        return fuse.search(value);
+    };
+
+    getSuggestionValue = suggestion => suggestion.item.names.common;
+
+    renderSuggestion = suggestion => (
+        <div>
+            {suggestion.item.names.common}
+        </div>
+    );
 
     render() {
         const { value, suggestions } = this.state;
@@ -68,8 +65,8 @@ export default class Search extends React.Component {
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                getSuggestionValue={getSuggestionValue}
-                renderSuggestion={renderSuggestion}
+                getSuggestionValue={this.getSuggestionValue}
+                renderSuggestion={this.renderSuggestion}
                 inputProps={inputProps}
             />
         );

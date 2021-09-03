@@ -2,6 +2,7 @@ import React from 'react'
 
 import PlantView from "./PlantView";
 import Search from "./Search"
+import inventory from "../plants.json";
 
 import catRight from '../images/cat-right.png';
 import catLeft from '../images/cat-left.png';
@@ -17,7 +18,7 @@ function MainPage() {
                 <div className="col-8 text-wrapper">
                     <h1>Can my cat eat that?</h1>
                     <p className="instructions">Search and filter common house plants and see what’s safe for Sprinkles to nibble on.</p>
-                    <Search />
+                    <Search inventory={inventory} />
                 </div>
                 <div className="col-2">
                     {/* TODO: Use a high res cat log0, this is a Figma export */}
