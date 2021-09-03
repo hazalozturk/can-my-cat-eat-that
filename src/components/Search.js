@@ -1,35 +1,6 @@
 import React from 'react';
-import Autosuggest from 'react-autosuggest';
 import Fuse from 'fuse.js';
 export default class Search extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            value: '',
-            suggestions: []
-        };
-    }
-
-    onChange = (event, { newValue }) => {
-        this.setState({
-            value: newValue
-        });
-    };
-
-    onSuggestionsFetchRequested = ({ value }) => {
-        this.setState({
-            suggestions: this.getSuggestions(value)
-        });
-    };
-
-    onSuggestionsClearRequested = () => {
-        this.setState({
-            suggestions: []
-        });
-        this.props.setInventory(this.props.inventory);
-    };
-
     getSuggestions = value => {
         let options = {
             id: "names.common",
@@ -41,36 +12,17 @@ export default class Search extends React.Component {
             keys: ['names.common', 'names.scientific']
         };
         const fuse = new Fuse(this.props.inventory, options);
-        let results = fuse.search(value)
-        this.props.setInventory(results.map(result => result.item));
-        return results;
+
+        let results = fuse.search(value.target.value).map(result => result.item);
+        !value.target.value ? this.props.setInventory(this.props.inventory) : this.props.setInventory(results);
     };
 
-    getSuggestionValue = suggestion => suggestion.item.names.common;
-
-    renderSuggestion = suggestion => (
-        <div>
-            {suggestion.item.names.common}
-        </div>
-    );
-
     render() {
-        const { value, suggestions } = this.state;
-
-        const inputProps = {
-            placeholder: ' Spider plant, fiddle leaf fig, etc...',
-            value,
-            onChange: this.onChange
-        };
-
         return (
-            <Autosuggest
-                suggestions={suggestions}
-                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
+            <input
+                type="text"
+                placeholder="Spider plant, fiddle leaf fig, etc..."
+                onChange={this.getSuggestions}
             />
         );
     }

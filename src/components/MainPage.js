@@ -11,7 +11,6 @@ const initialState = plantInventory.plants;
 
 function MainPage() {
     const [inventory, setInventory] = useState(initialState);
-    debugger
     return (
         <>
             <div className="search-wrapper">
