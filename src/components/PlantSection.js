@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ToxicityFilter from './ToxicityFilter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
 import { faGripVertical } from '@fortawesome/free-solid-svg-icons'
@@ -13,7 +14,7 @@ function PlantSection(props) {
             <div className="selection-flex-grid">
                 <div>
                     <p>Toxicity</p>
-                    <p>TODO: Dropdown</p>
+                    <ToxicityFilter setToxicity={props.setToxicity} />
                 </div>
                 <div className="toggle-wrapper selection-flex-grid">
                     <div>
