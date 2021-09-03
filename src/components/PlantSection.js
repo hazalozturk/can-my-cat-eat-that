@@ -31,7 +31,7 @@ function PlantSection(props) {
                 <div className="flex-grid">
                     {props.inventory.map((plant, index) =>
                         <div className="card" key={index}>
-                            <img src={require(`../${plant.image}`).default} alt={plant.names.scientific} className="plant-image" />
+                            <img src={require(`../${plant.image}`).default} alt={'shows' + ' ' + plant.names.common} className="plant-image" />
                             <div className="col">
                                 <div className="plant-info-row">
                                     <p>{plant.names.common}</p>
@@ -49,7 +49,7 @@ function PlantSection(props) {
                                 <div className="list-wrapper">
                                     <img src={require(`../${plant.image}`).default} alt={'avatar of' + ' ' + plant.names.common} className="plant-avatar" />
                                     <span className="name-col">
-                                        <p className="plant-common-name">{plant.names.common}</p>
+                                        <h1 className="plant-common-name">{plant.names.common}</h1>
                                         <p className="plant-scientific-name">{plant.names.scientific}</p>
                                     </span>
                                     <span className="token-col">{plant.toxicity ? <p className="toxicity-token toxic">Toxic</p> : <p className="toxicity-token">Non-toxic</p>}</span>
