@@ -142,7 +142,8 @@ p.toxic {
   padding-right: 80px;
   padding-left: 80px;
 }
-.plants-list li {
+.plant-avatar:hover {
+  box-shadow: 0 4px 8px 0 rgb(39, 51, 51, 0.2);
 }
 .plants-list span.name-col {
   width: 180px;
