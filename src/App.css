@@ -150,6 +150,7 @@
   width: 264px;
   height: 32px;
   border-color: #b0b6b7;
+  padding-left: 10px;
 }
 .toxicity-filter-dropdown:focus {
   outline: none; /* to get rid of the blue outline on focus */
