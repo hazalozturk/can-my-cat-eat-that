@@ -1,3 +1,6 @@
+.bold-text {
+  font-weight: bold;
+}
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -63,8 +66,9 @@
 .selection-flex-grid {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 0 7vw;
+  margin: 20px 7vw;
 }
 .toggle-wrapper {
   margin: 0;
@@ -72,6 +76,8 @@
 }
 .toggle-icon {
   margin: 10px;
+  font-weight: 100;
+  color: #273333;
 }
 .flex-grid {
   display: flex;
@@ -137,3 +143,21 @@
   left: 20px;
   color: #364141;
 }
+/* Search input styles ends */
+
+/* Toxicity filter styles */
+.toxicity-filter-dropdown {
+  width: 264px;
+  height: 32px;
+  border-color: #b0b6b7;
+}
+.toxicity-filter-dropdown:focus {
+  outline: none; /* to get rid of the blue outline on focus */
+  box-shadow: 0 1px 6px rgb(39, 51, 51, 0.2);
+  border-color: #364141;
+}
+.toxicity-filter-dropdown:hover {
+  outline: none; /* to get rid of the blue outline on focus */
+  border-color: #364141;
+}
+/* Toxicity filter styles end */

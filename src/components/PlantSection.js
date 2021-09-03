@@ -13,12 +13,12 @@ function PlantSection(props) {
         <div>
             <div className="selection-flex-grid">
                 <div>
-                    <p>Toxicity</p>
+                    <p className="bold-text">Toxicity</p>
                     <ToxicityFilter setToxicity={props.setToxicity} />
                 </div>
                 <div className="toggle-wrapper selection-flex-grid">
                     <div>
-                        <p>View Options</p>
+                        <p className="bold-text">View Options</p>
                         <i className="toggle-icon" onClick={toDo}><FontAwesomeIcon icon={faGripVertical} size="lg" /></i >
                         <i className="toggle-icon" onClick={toDo}><FontAwesomeIcon icon={faList} size="lg" /></i >
                     </div>

@@ -24,7 +24,7 @@ export default class Search extends React.Component {
         return (
             <div className="search-input-wrapper">
                 <FontAwesomeIcon icon={faSearch} size="lg" className="search-input-icon" />
-                <label id="searchLabel" for="search" class="sr-only">Search</label>
+                <label id="searchLabel" htmlFor="search" className="sr-only">Search</label>
                 <input
                     id="search" aria-labelledby="searchLabel"
                     className="search-input"
