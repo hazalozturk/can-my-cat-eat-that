@@ -78,14 +78,14 @@
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(39, 51, 51, 0.2);
   transition: 0.3s;
   height: 40vh;
   width: 20vw;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgb(39, 51, 51, 0.2);
 }
 
 .container {
@@ -105,3 +105,27 @@
   font-weight: bold;
 }
 /* Plant View section related styles end */
+
+/* Search input styles */
+.search-input-wrapper {
+  position: relative;
+}
+.search-input {
+  width: 60vw;
+  height: 56px;
+  border-radius: 32px;
+  border-color: #dee1e1;
+  border-style: solid; /* to overwrite the inset style of html input */
+  padding-left: 50px;
+}
+.search-input:focus {
+  box-shadow: 0 1px 6px rgb(39, 51, 51, 0.2);
+  outline: none; /* to get rid of the blue outline on focus */
+}
+
+.search-input-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #364141;
+}

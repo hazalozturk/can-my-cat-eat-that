@@ -1,5 +1,8 @@
 import React from 'react';
 import Fuse from 'fuse.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 export default class Search extends React.Component {
     getSuggestions = value => {
         let options = {
@@ -19,11 +22,15 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <input
-                type="text"
-                placeholder="Spider plant, fiddle leaf fig, etc..."
-                onChange={this.getSuggestions}
-            />
+            <div className="search-input-wrapper">
+                <FontAwesomeIcon icon={faSearch} size="lg" className="search-input-icon" />
+                <input
+                    className="search-input"
+                    type="text"
+                    placeholder="Spider plant, fiddle leaf fig, etc..."
+                    onChange={this.getSuggestions}
+                />
+            </div>
         );
     }
 }
