@@ -9,6 +9,10 @@
   height: 1px;
   overflow: hidden;
 }
+hr {
+  color: #dee1e1;
+}
+
 /* Header related styles */
 .App-header {
   background-color: #002138;
@@ -123,12 +127,57 @@
   background-color: #026b40;
   color: white;
   border-radius: 48px;
-  padding: 8px;
-  font-size: 10px;
+  padding: 6px;
+  font-size: 12px;
 }
 p.toxic {
   background-color: #ffbc02;
   color: #273333;
+}
+/* Plant View section related styles end */
+
+/* Plant List section related styles */
+.plants-list {
+  list-style-type: none;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+.plants-list li {
+}
+.plants-list span.name-col {
+  width: 180px;
+}
+.plants-list span.token-col {
+  width: 70px;
+  text-align: center;
+}
+.plants-list span.details-col {
+  width: 800px;
+}
+.list-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.plant-avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.plant-common-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #273333;
+}
+.plant-scientific-name {
+  color: #515e5f;
+  font-style: italic;
+  font-size: 13px;
+}
+.plant-details {
+  color: #364141;
 }
 /* Plant View section related styles end */
 

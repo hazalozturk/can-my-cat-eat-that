@@ -24,6 +24,7 @@ const filterByToxicity = (toxicity, inventory) => {
 function MainPage() {
     const [inventory, setInventory] = useState(initialState);
     const [toxicity, setToxicity] = useState('All');
+    const [isGridView, setGridView] = useState(true);
 
     return (
         <>
@@ -43,7 +44,7 @@ function MainPage() {
                 </div>
             </div>
             <div className="plant-view-wrapper">
-                <PlantSection inventory={filterByToxicity(toxicity, inventory)} setToxicity={setToxicity} />
+                <PlantSection inventory={filterByToxicity(toxicity, inventory)} setToxicity={setToxicity} isGridView={isGridView} setGridView={setGridView} />
             </div>
         </>
     )
