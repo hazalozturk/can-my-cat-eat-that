@@ -8,7 +8,7 @@ const toDo = () => {
     alert('TODO: toggle')
 };
 
-function PlantView() {
+function PlantSection() {
 
     return (
         <div>
@@ -42,4 +42,4 @@ function PlantView() {
     );
 }
 
-export default PlantView;
+export default PlantSection;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PlantView from "./PlantView";
+import PlantSection from "./PlantSection";
 import Search from "./Search"
 import inventory from "../plants.json";
 
@@ -26,7 +26,7 @@ function MainPage() {
                 </div>
             </div>
             <div className="plant-view-wrapper">
-                <PlantView />
+                <PlantSection />
             </div>
         </>
     )
