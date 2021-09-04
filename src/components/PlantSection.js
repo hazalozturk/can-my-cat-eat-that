@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react'
+
 import ToxicityFilter from './ToxicityFilter';
+import InfoModal from './InfoModal';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
 import { faGripVertical } from '@fortawesome/free-solid-svg-icons'
 
+
 function PlantSection(props) {
+    const [open, setOpen] = useState(false);
+    const [modalData, setModalData] = useState(props.inventory[0]);
+
     const switchToGrid = () => {
         props.setGridView(true);
     };
@@ -12,6 +19,16 @@ function PlantSection(props) {
     const switchToList = () => {
         props.setGridView(false);
     };
+
+    const toggleModal = (event) => {
+        event.preventDefault();
+        let plantName = event.currentTarget.getAttribute('plantname');
+        if (plantName) {
+            setModalData(props.inventory.filter(item => item.names.common === plantName)[0]);
+        }
+        setOpen(!open);
+    }
+
     return (
         <div>
             <div className="selection-flex-grid">
@@ -30,7 +47,7 @@ function PlantSection(props) {
             {props.isGridView ?
                 <div className="flex-grid">
                     {props.inventory.map((plant, index) =>
-                        <div className="card" key={index}>
+                        <div className="card" key={index} onClick={toggleModal} plantname={plant.names.common}>
                             <img src={require(`../${plant.image}`).default} alt={'shows' + ' ' + plant.names.common} className="plant-image" />
                             <div className="col">
                                 <div className="plant-info-row">
@@ -47,8 +64,8 @@ function PlantSection(props) {
                         <>
                             <li key={index}>
                                 <div className="list-wrapper">
-                                    <img src={require(`../${plant.image}`).default} alt={'avatar of' + ' ' + plant.names.common} className="plant-avatar" />
-                                    <span className="name-col">
+                                    <img src={require(`../${plant.image}`).default} alt={'avatar of' + ' ' + plant.names.common} className="plant-avatar" onClick={toggleModal} plantname={plant.names.common}/>
+                                    <span className="name-col" onClick={toggleModal} plantname={plant.names.common}>
                                         <h1 className="plant-common-name">{plant.names.common}</h1>
                                         <p className="plant-scientific-name">{plant.names.scientific}</p>
                                     </span>
@@ -61,6 +78,7 @@ function PlantSection(props) {
                     )}
                 </ul>
             }
+            <InfoModal toggleModal={toggleModal} open={open} modalData={modalData} />
         </div>
     );
 }

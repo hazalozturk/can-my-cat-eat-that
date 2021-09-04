@@ -82,6 +82,7 @@ hr {
   margin: 10px;
   font-weight: 100;
   color: #273333;
+  cursor: pointer;
 }
 .flex-grid {
   display: flex;
@@ -96,10 +97,11 @@ hr {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgb(39, 51, 51, 0.2);
+  box-shadow: 0 2px 4px 0 rgb(39, 51, 51, 0.2);
   transition: 0.3s;
   height: 40vh;
   width: 20vw;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -147,6 +149,7 @@ p.toxic {
 }
 .plants-list span.name-col {
   width: 180px;
+  cursor: pointer;
 }
 .plants-list span.token-col {
   width: 70px;
@@ -166,6 +169,7 @@ p.toxic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .plant-common-name {
   font-weight: bold;
@@ -213,6 +217,7 @@ p.toxic {
   height: 32px;
   border-color: #b0b6b7;
   padding-left: 10px;
+  cursor: pointer;
 }
 .toxicity-filter-dropdown:focus {
   outline: none; /* to get rid of the blue outline on focus */
@@ -224,3 +229,17 @@ p.toxic {
   border-color: #364141;
 }
 /* Toxicity filter styles end */
+
+/* Modal filter styles */
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-close {
+  cursor: pointer;
+  color: #273333;
+}
+.modal-image {
+  max-width: 40vw;
+}
+/* Modal filter styles ends*/
