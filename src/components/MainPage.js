@@ -9,7 +9,11 @@ import catLeft from '../images/cat-left.png';
 
 const initialState = plantInventory.plants;
 
-const filterByToxicity = (toxicity, inventory) => {
+const filterByToxicity = (toxicity, inventory, searchText) => {
+    if (toxicity === 'All' && searchText === '') {
+        return initialState;
+    }
+
     if (toxicity === 'All') {
         return inventory;
     } else if (toxicity === 'Toxic') {
@@ -25,6 +29,7 @@ function MainPage() {
     const [inventory, setInventory] = useState(initialState);
     const [toxicity, setToxicity] = useState('All');
     const [isGridView, setGridView] = useState(true);
+    const [searchText, setSearchText] = useState("");
 
     return (
         <>
@@ -36,7 +41,7 @@ function MainPage() {
                 <div className="col-8 text-wrapper">
                     <h1>Can my cat eat that?</h1>
                     <p className="instructions">Search and filter common house plants and see what’s safe for Sprinkles to nibble on.</p>
-                    <Search inventory={filterByToxicity(toxicity, initialState)} setInventory={setInventory} />
+                    <Search inventory={filterByToxicity(toxicity, initialState, searchText)} setInventory={setInventory} setSearchText={setSearchText}/>
                 </div>
                 <div className="col-2">
                     {/* TODO: Use a high res cat log0, this is a Figma export */}
@@ -44,7 +49,7 @@ function MainPage() {
                 </div>
             </div>
             <div className="plant-view-wrapper">
-                <PlantSection inventory={filterByToxicity(toxicity, inventory)} setToxicity={setToxicity} isGridView={isGridView} setGridView={setGridView} />
+                <PlantSection inventory={filterByToxicity(toxicity, inventory, searchText)} setToxicity={setToxicity} isGridView={isGridView} setGridView={setGridView} />
             </div>
         </>
     )

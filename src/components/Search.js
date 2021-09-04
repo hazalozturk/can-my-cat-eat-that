@@ -17,7 +17,13 @@ export default class Search extends React.Component {
         const fuse = new Fuse(this.props.inventory, options);
 
         let results = fuse.search(value.target.value).map(result => result.item);
-        !value.target.value ? this.props.setInventory(this.props.inventory) : this.props.setInventory(results);
+        if (!value.target.value) {
+            this.props.setInventory(this.props.inventory);
+            this.props.setSearchText("");
+        } else {
+            this.props.setInventory(results);
+            this.props.setSearchText(value.target.value);
+        }
     };
 
     render() {
