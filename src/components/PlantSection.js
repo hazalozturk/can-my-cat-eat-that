@@ -48,7 +48,7 @@ function PlantSection(props) {
                 <div className="flex-grid">
                     {props.inventory.map((plant, index) =>
                         <div className="card" key={index} onClick={toggleModal} plantname={plant.names.common}>
-                            <img src={require(`../${plant.image}`).default} alt={'shows' + ' ' + plant.names.common} className="plant-image" />
+                            <img src={require(`../${plant.image}`).default} alt={`shows ${plant.names.common}`} className="plant-image" />
                             <div className="col">
                                 <div className="plant-info-row">
                                     <p>{plant.names.common}</p>
@@ -61,10 +61,10 @@ function PlantSection(props) {
                 <ul className="plants-list">
                     <hr />
                     {props.inventory.map((plant, index) =>
-                        <>
-                            <li key={index}>
+                        <div key={index}>
+                            <li>
                                 <div className="list-wrapper">
-                                    <img src={require(`../${plant.image}`).default} alt={'avatar of' + ' ' + plant.names.common} className="plant-avatar" onClick={toggleModal} plantname={plant.names.common}/>
+                                    <img src={require(`../${plant.image}`).default} alt={`avatar of ${plant.names.common}`} className="plant-avatar" onClick={toggleModal} plantname={plant.names.common} />
                                     <span className="name-col" onClick={toggleModal} plantname={plant.names.common}>
                                         <h1 className="plant-common-name">{plant.names.common}</h1>
                                         <p className="plant-scientific-name">{plant.names.scientific}</p>
@@ -74,7 +74,7 @@ function PlantSection(props) {
                                 </div>
                             </li>
                             <hr key={index + plant.names.common + 'hr'} />
-                        </>
+                        </div>
                     )}
                 </ul>
             }
