@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/ToxicityFilter.css';
 export default class ToxicityFilter extends React.Component {
     changeToxicity = (event) => {
         this.props.setToxicity(event.target.options[event.target.selectedIndex].value)

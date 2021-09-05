@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import PlantSection from "./PlantSection";
 import Search from "./Search"
 import plantInventory from "../plants.json";
+import '../styles/Search.css';
 
 import catRight from '../assets/cat-right.png';
 import catLeft from '../assets/cat-left.png';
@@ -41,7 +42,7 @@ function MainPage() {
                 <div className="col-8 text-wrapper">
                     <h1>Can my cat eat that?</h1>
                     <p className="instructions">Search and filter common house plants and see what’s safe for Sprinkles to nibble on.</p>
-                    <Search inventory={filterByToxicity(toxicity, initialState, searchText)} setInventory={setInventory} setSearchText={setSearchText}/>
+                    <Search inventory={filterByToxicity(toxicity, initialState, searchText)} setInventory={setInventory} setSearchText={setSearchText} />
                 </div>
                 <div className="col-2">
                     {/* TODO: Use a high res cat log0, this is a Figma export */}

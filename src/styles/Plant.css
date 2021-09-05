@@ -1,0 +1,128 @@
+/* Plant View section related styles */
+.plant-view-wrapper {
+    margin: 20px;
+    color: #273333;
+  }
+  
+  .selection-flex-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 7vw;
+  }
+  .toggle-wrapper {
+    margin: 0;
+    text-align: center;
+  }
+  .toggle-icon {
+    margin: 10px;
+    font-weight: 100;
+    color: #273333;
+    cursor: pointer;
+  }
+  .toggle-icon:hover {
+    box-shadow: 0 8px 16px 0 rgb(39, 51, 51, 0.25);
+  }
+  .flex-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+  .flex-grid .col {
+    margin: 5px;
+  }
+  
+  .card {
+    box-shadow: 0 2px 4px 0 rgb(39, 51, 51, 0.2);
+    transition: 0.3s;
+    height: 40vh;
+    width: 20vw;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgb(39, 51, 51, 0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  
+  .plant-image {
+    max-width: 20vw;
+    min-height: 30vh;
+  }
+  
+  .plant-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    color: #273333;
+    font-weight: bold;
+  }
+  
+  .toxicity-token {
+    background-color: #026b40;
+    color: white;
+    border-radius: 48px;
+    padding: 6px;
+    font-size: 12px;
+  }
+  p.toxic {
+    background-color: #ffbc02;
+    color: #273333;
+  }
+  /* Plant View section related styles end */
+
+
+/* Plant List section related styles */
+.plants-list {
+  list-style-type: none;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+.plant-avatar:hover {
+  box-shadow: 0 4px 8px 0 rgb(39, 51, 51, 0.2);
+}
+.plants-list span.name-col {
+  width: 180px;
+  cursor: pointer;
+}
+.plants-list span.token-col {
+  width: 70px;
+  text-align: center;
+}
+.plants-list span.details-col {
+  width: 800px;
+}
+.list-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.plant-avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.plant-common-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #273333;
+}
+.plant-scientific-name {
+  color: #515e5f;
+  font-style: italic;
+  font-size: 13px;
+}
+.plant-details {
+  color: #364141;
+}
+/* Plant View section related styles end */

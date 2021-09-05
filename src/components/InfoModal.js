@@ -1,4 +1,6 @@
 import React from 'react';
+import '../styles/Plant.css';
+import '../styles/Modal.css';
 
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

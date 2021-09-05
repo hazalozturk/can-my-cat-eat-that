@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import ToxicityFilter from './ToxicityFilter';
 import InfoModal from './InfoModal';
+import '../styles/Plant.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
