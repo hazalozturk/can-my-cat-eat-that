@@ -84,6 +84,9 @@ hr {
   color: #273333;
   cursor: pointer;
 }
+.toggle-icon:hover {
+  box-shadow: 0 8px 16px 0 rgb(39, 51, 51, 0.25);
+}
 .flex-grid {
   display: flex;
   justify-content: center;
@@ -233,13 +236,87 @@ p.toxic {
 /* Modal filter styles */
 .modal-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #012038;
+  height: 5%;
+  padding: 20px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+.modal-header-text {
+  margin: 0;
+  font-weight: 300;
+}
+.modal-content {
+  padding: 20px 25px;
+}
+.modal-plant-info-row {
+  display: flex;
+  justify-content: space-around;
+  color: #273333;
+  font-weight: bold;
+  padding: 15px 0 25px 0;
 }
 .modal-close {
   cursor: pointer;
-  color: #273333;
+  color: #012038;
+  font-size: 20px;
+}
+.modal-close:hover {
+  color: #dee1e1;
 }
 .modal-image {
-  max-width: 40vw;
+  max-width: 20vw;
+  border-radius: 12px;
+}
+.toxicity-alert {
+  font-weight: bold;
+  padding: 20px 25px;
+}
+.modal-token {
+  width: 80%;
+  text-align: center;
+}
+.modal-hr {
+  margin: 0 25px;
+  border-color: rgb(222, 225, 225, 0.3);
+}
+/* open / close modal transitions */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.close-button {
+  border-color: #012038;
+  background-color: white;
+  border-radius: 4px;
+  color: #012038;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  justify-items: center;
+  width: 20%;
+}
+.close-button:hover {
+  color: white;
+  background-color: #012038;
 }
 /* Modal filter styles ends*/

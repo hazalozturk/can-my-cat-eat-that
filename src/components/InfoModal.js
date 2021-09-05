@@ -2,7 +2,7 @@ import React from 'react';
 
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 function InfoModal(props) {
     let plant = props.modalData;
@@ -10,39 +10,55 @@ function InfoModal(props) {
         <Modal
             style={{
                 overlay: {
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                    backgroundColor: 'rgba(22, 32, 32, 0.68)'
                 },
                 content: {
-                    position: 'absolute',
-                    border: '1px solid #ccc',
+                    border: 'none',
                     background: '#fff',
                     overflow: 'auto',
                     WebkitOverflowScrolling: 'touch',
-                    borderRadius: '4px',
+                    borderRadius: '12px',
                     outline: 'none',
-                    padding: '20px',
-                    width: '40vw'
+                    padding: '0',
+                    width: '40vw',
+                    left: '30vw',
+                    maxHeight: '85vh'
                 }
             }}
+            closeTimeoutMS={300}
             ariaHideApp={false}
             isOpen={props.open}
             onRequestClose={props.toggleModal}
             contentLabel="Plant Modal"
         >
             <div className="modal-header">
-                <i onClick={props.toggleModal}><FontAwesomeIcon icon={faWindowClose} size="lg" className="modal-close" /></i>
+                <h2 className="modal-header-text">Plant Details</h2>
+                <i onClick={props.toggleModal}><FontAwesomeIcon icon={faTimes} className="modal-close" /></i>
             </div>
-            <img src={require(`../${plant.image}`).default} alt={'shows' + ' ' + plant.names.common} className="modal-image" />
-            <div className="col">
-                <div className="plant-info-row">
+            <div className="col modal-content">
+                <div className="modal-plant-info-row">
+                    <img src={require(`../${plant.image}`).default} alt={`shows ${plant.names.common}`} className="modal-image" />
                     <span>
                         <h1 className="plant-common-name">{plant.names.common}</h1>
                         <p className="plant-scientific-name">{plant.names.scientific}</p>
+                        {plant.toxicity ? <p className="toxicity-token toxic modal-token">Toxic</p> : <p className="toxicity-token modal-token">Non-toxic</p>}
                     </span>
-                    {plant.toxicity ? <p className="toxicity-token toxic">Toxic</p> : <p className="toxicity-token">Non-toxic</p>}
                 </div>
             </div>
-            <span className="details-col"><p className="plant-details">{plant.details}</p></span>
+            <hr className="modal-hr" />
+            <span className="details-col"><p className="plant-details modal-content">{plant.details}</p></span>
+            {plant.toxicity && <span className="details-col">
+                <hr className="modal-hr" />
+                <ul>
+                    <li className="plant-details">{plant.toxicity.property}</li>
+                    <li className="plant-details">{plant.toxicity.symptoms}</li>
+                </ul>
+                <p className="toxicity-alert">If you suspect your pet may have ingested a potentially toxic substance, contact your local veterinarian as soon as possible.</p>
+            </span>}
+            <hr className="modal-hr" />
+            <div className="modal-footer">
+                <button onClick={props.toggleModal} className="close-button">Close</button>
+            </div>
         </Modal>
     );
 }
