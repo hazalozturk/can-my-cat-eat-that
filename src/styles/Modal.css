@@ -83,3 +83,16 @@
     color: white;
     background-color: #012038;
 }
+
+@media only screen and (max-width: 820px) {
+    .ReactModal__Content--after-open {
+        width: 90vw !important;
+        left: 20px !important;
+    }
+    .close-button {
+        padding: 10px 0;
+    }
+    .modal-image {
+        max-width: 40vw;
+    }
+}

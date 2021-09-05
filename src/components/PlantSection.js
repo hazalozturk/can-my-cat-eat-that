@@ -38,7 +38,7 @@ function PlantSection(props) {
                     <ToxicityFilter setToxicity={props.setToxicity} />
                 </div>
                 <div className="toggle-wrapper selection-flex-grid">
-                    <div>
+                    <div className="toggle-sub-wrapper">
                         <p className="bold-text">View Options</p>
                         <i className="toggle-icon" onClick={switchToGrid}><FontAwesomeIcon icon={faGripVertical} size="lg" /></i >
                         <i className="toggle-icon" onClick={switchToList}><FontAwesomeIcon icon={faList} size="lg" /></i >
@@ -70,7 +70,7 @@ function PlantSection(props) {
                                         <h1 className="plant-common-name">{plant.names.common}</h1>
                                         <p className="plant-scientific-name">{plant.names.scientific}</p>
                                     </span>
-                                    <span className="token-col">{plant.toxicity ? <p className="toxicity-token toxic">Toxic</p> : <p className="toxicity-token">Non-toxic</p>}</span>
+                                    <span className="token-col">{plant.toxicity ? <p className="toxicity-token toxic list-token">Toxic</p> : <p className="toxicity-token list-token">Non-toxic</p>}</span>
                                     <span className="details-col"><p className="plant-details">{plant.details}</p></span>
                                 </div>
                             </li>

@@ -52,3 +52,19 @@
     color: #364141;
 }
 /* Search input styles ends */
+
+@media only screen and (max-width: 820px) {
+    .instructions {
+        width: 100%;
+    }
+    .search-wrapper {
+        align-items: flex-start;
+        padding-top: 50px;
+    }
+    .cat-image {
+        max-width: 12vw;
+    }
+    .search-input {
+        width: 53vw;
+    }
+}
