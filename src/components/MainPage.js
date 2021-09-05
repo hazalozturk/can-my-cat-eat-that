@@ -4,8 +4,8 @@ import PlantSection from "./PlantSection";
 import Search from "./Search"
 import plantInventory from "../plants.json";
 
-import catRight from '../images/cat-right.png';
-import catLeft from '../images/cat-left.png';
+import catRight from '../assets/cat-right.png';
+import catLeft from '../assets/cat-left.png';
 
 const initialState = plantInventory.plants;
 
