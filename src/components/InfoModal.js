@@ -48,9 +48,13 @@ function InfoModal(props) {
                 </div>
             </div>
             <hr className="modal-hr" />
-            <span className="details-col"><p className="plant-details modal-content">{plant.details}</p></span>
+            <span className="details-col">
+                <p className="content-title">Details</p>
+                <p className="plant-details modal-content">{plant.details}</p>
+            </span>
             {plant.toxicity && <span className="details-col">
                 <hr className="modal-hr" />
+                <p className="content-title">Toxicity</p>
                 <ul>
                     <li className="plant-details">{plant.toxicity.property}</li>
                     <li className="plant-details">{plant.toxicity.symptoms}</li>
