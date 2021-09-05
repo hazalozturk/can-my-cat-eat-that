@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 code {
