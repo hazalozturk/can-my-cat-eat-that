@@ -41,7 +41,7 @@ function PlantSection(props) {
                     <div className="toggle-sub-wrapper">
                         <p className="bold-text">View Options</p>
                         <i className="toggle-icon" onClick={switchToGrid}><FontAwesomeIcon icon={faGripVertical} size="lg" /></i >
-                        <i className="toggle-icon" onClick={switchToList}><FontAwesomeIcon icon={faList} size="lg" /></i >
+                        <i className="toggle-icon" data-testid="list-toggle" onClick={switchToList}><FontAwesomeIcon icon={faList} size="lg" /></i >
                     </div>
                 </div>
             </div>
