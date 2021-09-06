@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../styles/ToxicityFilter.css';
 export default class ToxicityFilter extends React.Component {
     changeToxicity = (event) => {
@@ -18,3 +20,6 @@ export default class ToxicityFilter extends React.Component {
     }
 }
 
+ToxicityFilter.propTypes = {
+    setToxicity: PropTypes.func,
+};

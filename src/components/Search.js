@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Fuse from 'fuse.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -43,3 +45,9 @@ export default class Search extends React.Component {
         );
     }
 }
+
+Search.propTypes = {
+    inventory: PropTypes.array,
+    setInventory: PropTypes.func,
+    setSearchText: PropTypes.func
+};
