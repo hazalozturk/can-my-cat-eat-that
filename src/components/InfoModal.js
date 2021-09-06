@@ -42,7 +42,7 @@ function InfoModal(props) {
             <div className="col modal-content">
                 <div className="modal-plant-info-row">
                     <img src={require(`../assets/${plant.image}`).default} alt={`shows ${plant.names.common}`} className="modal-image" />
-                    <span>
+                    <span className="modal-info-span">
                         <h1 className="plant-common-name">{plant.names.common}</h1>
                         <p className="plant-scientific-name">{plant.names.scientific}</p>
                         {plant.toxicity ? <p className="toxicity-token toxic modal-token">Toxic</p> : <p className="toxicity-token modal-token">Non-toxic</p>}

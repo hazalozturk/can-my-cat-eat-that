@@ -99,6 +99,9 @@
     .modal-image {
         max-width: 40vw;
     }
+    .modal-info-span {
+        padding-left: 10px;
+    }
 }
 @media only screen and (device-width: 1024px) {
     /* For general iPad landscape and iPad Pro layouts */
