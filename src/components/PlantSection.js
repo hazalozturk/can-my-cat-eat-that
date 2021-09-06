@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import ToxicityFilter from './ToxicityFilter';
 import InfoModal from './InfoModal';
+import PlantList from './PlantList';
+import PlantGrid from './PlantGrid';
+
 import '../styles/Plant.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -46,39 +49,9 @@ function PlantSection(props) {
                     </div>
                 </div>
             </div>
-            {props.isGridView ?
-                <div className="flex-grid">
-                    {props.inventory.map((plant, index) =>
-                        <div className="card" key={index} onClick={toggleModal} plantname={plant.names.common}>
-                            <img src={require(`../assets/${plant.image}`).default} alt={`shows ${plant.names.common}`} className="plant-image" />
-                            <div className="col">
-                                <div className="plant-info-row">
-                                    <p>{plant.names.common}</p>
-                                    {plant.toxicity ? <p className="toxicity-token toxic">Toxic</p> : <p className="toxicity-token">Non-toxic</p>}
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </div> :
-                <ul className="plants-list">
-                    <hr />
-                    {props.inventory.map((plant, index) =>
-                        <div key={index}>
-                            <li>
-                                <div className="list-wrapper">
-                                    <img src={require(`../assets/${plant.image}`).default} alt={`avatar of ${plant.names.common}`} className="plant-avatar" onClick={toggleModal} plantname={plant.names.common} />
-                                    <span className="name-col" onClick={toggleModal} plantname={plant.names.common}>
-                                        <h1 className="plant-common-name">{plant.names.common}</h1>
-                                        <p className="plant-scientific-name">{plant.names.scientific}</p>
-                                    </span>
-                                    <span className="token-col">{plant.toxicity ? <p className="toxicity-token toxic list-token">Toxic</p> : <p className="toxicity-token list-token">Non-toxic</p>}</span>
-                                    <span className="details-col"><p className="plant-details">{plant.details}</p></span>
-                                </div>
-                            </li>
-                            <hr key={index + plant.names.common + 'hr'} />
-                        </div>
-                    )}
-                </ul>
+            {
+                props.isGridView ? <PlantGrid inventory={props.inventory} toggleModal={toggleModal} /> :
+                    <PlantList inventory={props.inventory} toggleModal={toggleModal} />
             }
             <InfoModal toggleModal={toggleModal} open={open} modalData={modalData} />
         </div>
