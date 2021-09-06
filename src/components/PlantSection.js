@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 
 import ToxicityFilter from './ToxicityFilter';
 import InfoModal from './InfoModal';
@@ -83,5 +84,12 @@ function PlantSection(props) {
         </div>
     );
 }
+
+PlantSection.propTypes = {
+    inventory: PropTypes.array,
+    isGridView: PropTypes.bool,
+    setGridView: PropTypes.func,
+    setToxicity: PropTypes.func,
+};
 
 export default PlantSection;

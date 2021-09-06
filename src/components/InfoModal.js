@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../styles/Plant.css';
 import '../styles/Modal.css';
 
@@ -68,5 +70,11 @@ function InfoModal(props) {
         </Modal>
     );
 }
+
+InfoModal.propTypes = {
+    modalData: PropTypes.object,
+    open: PropTypes.bool,
+    toggleModal: PropTypes.func
+};
 
 export default InfoModal;
