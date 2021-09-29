@@ -1,4 +1,4 @@
-# Sprout Social - Creative Technologist Challenge
+# Can my Cat Eat That
 ## Project setup
 ```
 yarn install
